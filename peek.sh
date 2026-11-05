@@ -14,9 +14,10 @@ if [[ $(wc -l < "$file") -le $(( 2*$number )) ]]
 	then 
 		cat "$file"
 	else
-		echo File too large. Only printing $(( 2*$number )) lines. 
+		echo Warning: File too large. Only printing first and last $number lines. 
 		echo First $number lines:
 		head -n $2 $1 
+		echo "..."
 		echo Last $number lines:
 		tail -n $2 $1
 fi
